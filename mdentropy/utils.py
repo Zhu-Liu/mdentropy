@@ -60,3 +60,18 @@ def unique_row_count(arr):
     _, counts = unique(arr.view(dtype((void, arr.dtype.itemsize *
                                        arr.shape[1]))), return_counts=True)
     return counts
+
+
+def most_common(lst):
+    """Convenience function for finding the most common element in a list
+    Taken from http://stackoverflow.com/questions/1518522/python-most-common-element-in-a-list
+
+    Parameters
+    ----------
+    lst : list
+    Returns
+    -------
+    most_common : object
+        most common object
+    """
+    return max(set(lst), key=lst.count)
